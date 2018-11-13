@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans|Sawarabi+Gothic" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+            <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+            <link rel="stylesheet" type="text/css" href="./styles.css"/>
+
+
+        <title>Wii Shat 2.0</title>
+    </head>
+    <body>
+         <div class="chat">
+                <div class="chat-header clearfix">
+                  <img src="avatar.svg" alt="avatar" class="avatar-dim" />
+                  
+                  <div class="chat-about">
+                    <div class="chat-with">Wii Shat 2.0</div>
+                    <div class="chat-num-messages">WebSockets Chat Laboratorio 5</div>
+                  </div>
+                  <i class="fa fa-star"></i>
+                </div> <!-- end chat-header -->
+                
+                <div class="chat-history" id="chatsHistory">
+                  <ul>
+                    <li class="clearfix">
+                      <div class="message-data align-right">
+                        <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+                        
+                      </div>
+                      <div class="message other-message float-right">
+                      </div>
+                    </li>
+                    
+                    <li>
+                      <div class="message-data">
+                        <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+                      </div>
+                      <div class="message my-message">
+                      </div>
+                    </li>
+
+                  </ul>
+                  
+                </div> <!-- end chat-history -->
+                
+                <div class="chat-message clearfix">
+
+                  <button onclick="fastKey1()">LOL</button>
+
+                  <button onclick="fastKey2()">Este Men</button>
+
+                  <button onclick="fastKey3()">Hola</button>
+
+                  <button onclick="fastKey4()">jejeje</button>
+
+                  <textarea name="message-to-send" id="message-to-send" placeholder ="Escribe tu mensaje..." rows="3"></textarea>
+
+                  <button onclick="sendMessage()">
+                  <img src="telegram.svg" class="sendButton-dim">
+
+                </button>
+
+                </div> <!-- end chat-message -->
+                
+              </div> <!-- end chat -->
+              
+            </div> <!-- end container -->
+
+          <script id="message-template" type="text/x-handlebars-template">
+            <li class="clearfix">
+              <div class="message-data align-right">
+                <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
+                <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
+              </div>
+              <div class="message other-message float-right">
+                {{messageOutput}}
+              </div>
+            </li>
+          </script>
+
+          <script id="message-response-template" type="text/x-handlebars-template">
+            <li>
+              <div class="message-data">
+                <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
+                <span class="message-data-time">{{time}}, Today</span>
+              </div>
+              <div class="message my-message">
+                {{response}}
+              </div>
+            </li>
+          </script>
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+          <script src='http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js'></script>
+          <script src='http://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js'></script>
+
+   </body>
+
+    <script type="text/javascript" src="./chatindex.js"></script>
+
+
+</html>
